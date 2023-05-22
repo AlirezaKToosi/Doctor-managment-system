@@ -49,6 +49,12 @@
                 <td th:text="${doctor.firstName}"></td>
                 <td th:text="${doctor.lastName}"></td>
                 <td th:text="${doctor.email}"></td>
+                <td>
+                    <a th:href="@{/doctors/edit/{id}(id=${doctor.id})}"
+                       class="btn btn-primary ">
+                        Update
+                    </a>
+                </td>
             </tr>
             </tbody>
         </table>
