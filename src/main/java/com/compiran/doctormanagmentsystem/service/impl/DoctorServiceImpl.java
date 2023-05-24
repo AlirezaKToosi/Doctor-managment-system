@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.compiran.doctormanagmentsystem.repository.DoctorRepository;
 
 import java.util.List;
+
 @Service
 public class DoctorServiceImpl implements DoctorService {
     @Autowired
@@ -30,5 +31,10 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Doctor updateDoctor(Doctor doctor) {
         return doctorRepository.save(doctor);
+    }
+
+    @Override
+    public void removeDoctorById(Long id) {
+        doctorRepository.deleteById(id);
     }
 }

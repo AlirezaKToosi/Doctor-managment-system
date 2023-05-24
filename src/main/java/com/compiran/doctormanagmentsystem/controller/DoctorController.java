@@ -35,7 +35,7 @@ public class DoctorController {
     }
 
     @PostMapping("/doctors")
-    public String saveDoctor(@ModelAttribute("doctors") Doctor doctor) {
+    public String saveDoctor(@ModelAttribute("doctors") Doctor doctor, Model model) {
         doctorService.saveDoctor(doctor);
         return "redirect:/doctors";
     }
@@ -62,5 +62,11 @@ public class DoctorController {
 
         return "redirect:/doctors";
 
+    }
+
+    @GetMapping("/doctors/{id}")
+    public String removeDoctorById(@PathVariable Long id) {
+        doctorService.removeDoctorById(id);
+        return "redirect:/doctors";
     }
 }
